@@ -47,22 +47,17 @@ CPPFLAGS += -D_IPP_PRIVATE_STRUCTURES
 CPPFLAGS += $(shell dpkg-buildflags --get CPPFLAGS)
 
 DEB_CONFIGURE_EXTRA_FLAGS := \
-	--with-shadow 				\
 	--prefix=/usr 				\
-	--with-uams-path=/usr/lib/netatalk	\
-	--enable-tcp-wrappers			\
-	--enable-timelord --enable-overwrite	\
 	--with-pkgconfdir=/etc/netatalk		\
-	--enable-krb4-uam --enable-krbV-uam	\
-	--with-cnid-dbd-txn			\
-	--with-libgcrypt-dir			\
+	--with-uams-path=/usr/lib/netatalk	\
+	--localstatedir=/var/lib		\
 	--with-cracklib=/var/cache/cracklib/cracklib_dict	\
-	--disable-srvloc --enable-zeroconf	\
-	--enable-ddp				\
+	--enable-tcp-wrappers			\
+	--enable-krbV-uam			\
+	--enable-zeroconf			\
 	--without-libevent			\
 	--with-init-style=debian-sysv		\
-	--localstatedir=/var/lib		\
-	--enable-debian
+	--with-shadow
 
 DEB_INSTALL_EXAMPLES_netatalk = debian/examples/*
 
