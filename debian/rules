@@ -56,13 +56,19 @@ DEB_CONFIGURE_EXTRA_FLAGS := \
 	--enable-krb4-uam --enable-krbV-uam	\
 	--with-cnid-dbd-txn			\
 	--with-libgcrypt-dir			\
-	--with-cracklib=/var/cache/cracklib/cracklib_dict	\
+	--with-cracklib				\
+	--enable-krbV-uam			\
 	--disable-srvloc --enable-zeroconf	\
 	--enable-ddp				\
 	--without-libevent			\
-	--with-init-style=debian-systemd		\
+	--without-tdb				\
+	--with-init-style=debian-systemd	\
 	--localstatedir=/var/lib		\
-	--enable-debian
+	--enable-debian				\
+	--with-dbus-daemon=/usr/bin/dbus-daemon \
+	--with-dbus-sysconf-dir=/etc/dbus-1/system.d	\
+	--with-pam-confdir=/etc/pam.d		\
+	--with-tracker-pkgconfig-version=1.0
 
 DEB_INSTALL_EXAMPLES_netatalk = debian/examples/*
 
